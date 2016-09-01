@@ -1,0 +1,36 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #1a7495;
+  background: red;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #79cbf5, #1a7495);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #79cbf5, #1a7495);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #79cbf5, #1a7495);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #79cbf5, #1a7495);
+  /* Standard syntax */
+  font-size: 16px; }
+  body .content {
+    padding: 50px; }
+  body .list {
+    list-style-type: none; }
+  body .fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px; }
+  body .fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0); }
+  body .goRight {
+    float: right; }
+  body a {
+    cursor: pointer; }
