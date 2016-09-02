@@ -104,13 +104,22 @@ function getInformationFromServer() {
       dataType: 'json',
     })
     .done(function(data) {
+      //let i = 0;
+      //let len = data.length;
+      //let progressBar = document.getElementsByClassName('progress-bar')[0];
+      console.log("DATA length:" + data.length)
       for (let obj of data) {
+        //i++;
+        //progressBarUpdate(len, i, progressBar);
         if (obj.text) {
           arr.push(obj.text);
         } else {
           console.log(obj + " has no text field! text:" + obj.text);
         }
       }
+
+      serverContentLoaded();
+
       console.log(arr.length + " elements added to arr!");
       addToMap(arr)
         .then((value) => {
@@ -127,6 +136,21 @@ function getInformationFromServer() {
     });
 }
 
+/**
+  Progress bar progress updater
+*/
+function progressBarUpdate(len, i, p) {
+  let procent = Math.round((i / len) * 100);
+  p.style.width = procent + "%";
+  p.innerHTML = procent + "%";
+}
+
+/**
+  A function which is called when the data from the server is loaded
+*/
+function serverContentLoaded() {
+  $('.loader').hide();
+}
 /**
   The function adds a new category to the global array and map.
 */
